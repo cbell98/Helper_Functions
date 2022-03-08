@@ -60,6 +60,19 @@ def solution(a, b, c, d, e, f):
     return max_num
 
 
+# Return the largest of six numbers
+def solution(a, b, c, d, e, f):
+
+    numbers = [a, b, c, d, e, f]
+    max_num = a
+
+    for number in numbers:
+        if number > max_num:
+            max_num = number
+
+    return max_num
+
+
 # This function will run a set of tests on three numbers.
 # If the test passes, the function will return the string "OK".
 # Otherwise it returns "NOK"
