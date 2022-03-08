@@ -24,6 +24,14 @@ def solution(a, b):
         return b
 
 
+# Return the larger of two characters
+def solution(a, b):
+    if a > b:
+        return a
+    else:
+        return b
+
+
 # This function will analyze its input and return a string based on it
 def solution(n):
     if n == 0:
