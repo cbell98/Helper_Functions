@@ -10,18 +10,9 @@ def solution(f, places):
 # Write a function that returns true if a number is between 2 and 7, exclusive.
 def solution(n):
     if n > 2 and n < 7:
-        return "true"
+        return True
     else:
-        return "false"
-# data type error above
-
-
-# Return the larger of two characters
-def solution(a, b):
-    if a > b:
-        return a
-    else:
-        return b
+        return False
 
 
 # Return the larger of two characters
