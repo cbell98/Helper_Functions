@@ -45,7 +45,14 @@ def solution(n):
 # until the product becomes evenly divisible by 7
 # Then it should stop and return the product
 # If x is already divisible by 7, just return x
-Need answer
+def solution(x):
+    n = x
+    total = x
+    while total % 7 != 0:
+        n += 1
+        total *= n
+    
+    return total
 
 
 # Write a function that chops off the beginning and end of an
