@@ -167,7 +167,11 @@ def solution(s):
 # leading zeros. The field width is the total number of digits in the result string,
 # not the number of zeros. If the width is smaller than the number of digits in the
 # n, return a string containing only n.
-Need answer
+def solution(n, width):
+    if width < len(str(n)):
+        return str(n)
+    else:
+        return ((width - len(str(n))) * "0") + str(n)
 
 
 # Construct a string of p copies of n capital "A"s and m capital "B"s
