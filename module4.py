@@ -1,9 +1,6 @@
 # Functions manipulating arrays
 
 # Write a function that returns the length of an array
-from multiprocessing.connection import answer_challenge
-
-
 def solution(a):
     return len(a)
 
