@@ -20,3 +20,17 @@ def solution(s):
         end -= 1
 
     return True
+
+# Return a number with its digits reversed.
+# The return value should be an integer.
+def solution(n):
+    n = str(n)
+    
+    new_str = ""
+    
+    for i in range(len(n)-1, -1, -1):
+        new_str += n[i]
+        
+    return int(new_str)
+
+
