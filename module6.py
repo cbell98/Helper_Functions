@@ -44,4 +44,23 @@ def solution(a):
     
     return new_arr == a
 
+# Given an input array a determine the length of the leading "run" of numbers. The run is how many
+# numbers at the front of the array are the same. If the array is empty, return 0.
+def solution(a):
+    
+    count = 1
+    
+    if a == []:
+        return 0
+    elif len(a) == 1:
+        return 1
+    else:
+        lead = a[0]
+        
+        for i in range(1, len(a)):
+            if lead == a[i]:
+                count += 1
+            else:
+                return count
+
 # 
