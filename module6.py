@@ -63,4 +63,27 @@ def solution(a):
             else:
                 return count
 
+# Return a slice of array a starting from index start and ending before index end.
+# If end is less than or equal to start, return an empty array.
+# Note that start and end could be beyond the length of the array.
+# They should be clamped between 0 and the length of the array minus 1.
+def solution(a, start, end):
+    
+    if end <= start:
+        return []
+
+    if start < 0:
+        start = 0
+    
+    if start > len(a) - 1:
+        start = len(a)
+    
+    if end > len(a) - 1:
+        end = len(a)
+    
+    if end < 0:
+        end = 0
+    
+    return a[start:end]
+
 # 
