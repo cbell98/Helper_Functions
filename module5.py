@@ -6,9 +6,6 @@
 # insert a string of p capital "X"s instead. Copy numbers begin with 0
 # for the first copy. Do not use any built-in string duplication
 # functionality to solve this.
-from multiprocessing.connection import answer_challenge
-
-
 def solution(p, n, m):
 
     a_str = ""
