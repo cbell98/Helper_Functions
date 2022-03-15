@@ -98,4 +98,13 @@ def solution(s, a, b):
     return s[a:b]
 
 
-# 
+# Given a number, return the number of digits. You may not use strings to solve this challenge.
+# You might have to get mathy for this one.
+def solution(n):
+    count = 1
+    
+    while n >= 10:
+        count +=1
+        n // 10
+
+    return count
