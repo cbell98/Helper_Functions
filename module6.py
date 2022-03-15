@@ -98,8 +98,23 @@ def solution(a):
             counter = curr_freq
     
     return counter
-
+# NOT totally WORKING ABOVE
 
 # Run-length encoding algorithm (RLE) works by taking the occurrence of each repeating 
 # character and outputting that number along with a single character of the repeating sequence.
 # You need to implement an algorithm that applies the RLE to a given string.
+def solution(inputString):
+    
+    n = len(inputString)
+    i = 0
+    
+    while i < (n-1):
+        count = 1
+        
+        while (i < n-1 and inputString[i] == inputString[i+1]):
+            count += 1
+            i += 1
+        i += 1
+        
+        return str(count) + inputString[i-1]
+# NOT WORKING ABOVE
