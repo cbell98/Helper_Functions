@@ -86,4 +86,20 @@ def solution(a, start, end):
     
     return a[start:end]
 
-# 
+# Examine an array and determine the length of the longest run of elements. 
+# That is, the most of a particular element seen in a row.
+def solution(a):
+    
+    counter = 0
+    
+    for i in a:
+        curr_freq = a.count(i)
+        if curr_freq > counter:
+            counter = curr_freq
+    
+    return counter
+
+
+# Run-length encoding algorithm (RLE) works by taking the occurrence of each repeating 
+# character and outputting that number along with a single character of the repeating sequence.
+# You need to implement an algorithm that applies the RLE to a given string.
