@@ -110,4 +110,21 @@ def solution(n):
     return count
 
 
-# 
+# Write a function that builds an n x n multiplication table.
+# The result will be a 2D array. The 0th row and column of the table begin with 1 and end with n.
+
+
+# This function should scan an array for certain elements and remove them.
+def solution(a, x):
+    
+    new_arr = []
+    
+    for element in a:
+        if element != x:
+            new_arr.append(element)
+        
+    return new_arr
+
+
+# You have an array p of points on a Cartesian plane. Find and return the minimum possible Euclidian distance 
+# between two points with different indices in p. 
