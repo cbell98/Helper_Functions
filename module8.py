@@ -63,4 +63,28 @@ def solution(a, window_size):
 # You are given an array of integers a. Your task is to calculate how many numbers in the array are equal to 
 # the arithmetic mean of their immediate neighbors. In other words, count the number of indices i such that 
 # a[i] = (a[i - 1] + a[i + 1]) / 2. Note: If a[i - 1] or a[i + 1] don't exist, they should be considered equal to 0.
+Need answer
 
+
+# Avoid using built-in functions to solve this challenge. Implement them yourself, since this is what you would 
+# be asked to do during a real interview. Implement a function that takes two strings, s and x, as arguments and 
+# finds the first occurrence of the string x in s. The function should return an integer indicating the index 
+# in s of the first occurrence of x. If there are no occurrences of x in s, return -1.
+def solution(s, x):
+    
+    window = len(x)
+    
+    for start in range(0, len(s) - window + 1):
+        
+        value = ""
+        
+        for i in range(0 + start, window + start):
+            value += s[i]
+        
+        if value == x:
+            return start           
+        
+    return -1
+
+
+# 
