@@ -41,4 +41,26 @@ def solution(a, window_size):
     return result
 
 
-# 
+# Write a function that moves a "window" over an array, processing the values under the window as it goes.
+# For example, a window of size 3 moving across an array of length 9 might look like this for the first 3 
+# moves (window is the bar over the values):
+def solution(a, window_size):
+    result = []
+        
+    for start in range(0, len(a) - window_size +1):
+        sum = 0
+        
+        for i in range(0 + start, window_size + start):
+            sum += a[i]
+            
+        average = sum / window_size
+        
+        result.append(average)
+    
+    return result
+
+
+# You are given an array of integers a. Your task is to calculate how many numbers in the array are equal to 
+# the arithmetic mean of their immediate neighbors. In other words, count the number of indices i such that 
+# a[i] = (a[i - 1] + a[i + 1]) / 2. Note: If a[i - 1] or a[i + 1] don't exist, they should be considered equal to 0.
+
