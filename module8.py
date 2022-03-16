@@ -23,3 +23,22 @@ def solution(a):
 # Write a function that moves a "window" over an array, processing the values under the window as it goes.
 # For example, a window of size 3 moving across an array of length 9 might look like this for the first 3 
 # moves (window is the bar over the values):
+def is_even(x):
+    return x % 2 == 0
+
+def solution(a, window_size):
+    result = []
+    
+    for start in range(0, len(a) - window_size +1):
+        all_odd = True
+        
+        for i in range(0 + start, window_size + start):
+            if is_even(a[i]):
+                all_odd = False
+        
+        result.append(all_odd)
+    
+    return result
+
+
+# 
