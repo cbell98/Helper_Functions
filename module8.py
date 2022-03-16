@@ -90,3 +90,26 @@ def solution(s, x):
 # Given a string s consisting of small English letters, find and return the first instance of a non-repeating 
 # character in it. If there is no such character, return '_'.
 
+
+# You're given an array of integers a. Let's call (a[i - 1], a[i], a[i + 1]) a good tuple, if exactly 2 out of 
+# the 3 numbers in it are equal. For example, (2, 1, 2) is a good tuple, but (1, 1, 1) and (1, 2, 3) are not.
+# Your task is to return the number of good tuples in a. Note: The tuples may be overlapping.
+
+# In each window, compare three values
+def solution(a):
+    
+    good_tuples = 0
+    
+    window = 3
+    
+    for start in range(0, len(a) - window +1):
+        
+        for i in range(0 + start, window + start):
+            
+    
+            return good_tuples
+
+
+# You have a string s. Split s into the minimum possible number of increasing substrings. A substring is 
+# considered to be increasing when the next symbol in the substring is also next in the English alphabet. 
+# This is case sensitive, i.e. 'b' is next for 'a' but 'C' is not next for 'b'. Return an array of these substrings.
