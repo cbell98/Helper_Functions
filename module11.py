@@ -44,4 +44,33 @@ def solution(a, b, c):
     return head
 
 
-# 
+# Given a list, return length of the list--i,e, the number of nodes in the list.
+# You do not need to uncomment the ListNode code in the header. That's just there for your reference.
+# Note the the tests will show the linked lists as if they are arrays. This is just the visual representation; 
+# under the hood, it's a linked list with those values.
+
+# Singly-linked lists are already defined with this interface:
+# class ListNode(object):
+#   def __init__(self, x):
+#     self.value = x
+#     self.next = None
+
+def solution(head):
+    
+    count = 0
+
+    if head == []:
+        return 0
+    else:
+        n = head
+        while n is not None:
+            count += 1
+            n = n.next
+    
+    return count
+
+
+# Given a list, return the sum of all the values in the list. If the input list is empty, return 0.
+# You do not need to uncomment the ListNode code in the header. That's just there for your reference.
+# Note the the tests will show the linked lists as if they are arrays. This is just the visual 
+# representation; under the hood, it's a linked list with those values.
