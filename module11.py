@@ -74,3 +74,29 @@ def solution(head):
 # You do not need to uncomment the ListNode code in the header. That's just there for your reference.
 # Note the the tests will show the linked lists as if they are arrays. This is just the visual 
 # representation; under the hood, it's a linked list with those values.
+
+# Singly-linked lists are already defined with this interface:
+# class ListNode(object):
+#   def __init__(self, x):
+#     self.value = x
+#     self.next = None
+
+def solution(head):
+    
+    sum = 0
+
+    if head == []:
+        return 0
+    else:
+        n = head
+        while n is not None:
+            sum += n.value
+            n = n.next
+    
+    return sum
+
+
+# Given a list, return the value of the tail node in the list. If the input list is empty, return -9999.
+# You do not need to uncomment the ListNode code in the header. That's just there for your reference.
+# Note the the tests will show the linked lists as if they are arrays. This is just the visual representation; 
+# under the hood, it's a linked list with those values.
