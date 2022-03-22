@@ -121,3 +121,23 @@ def solution(s):
 
 # You can use "in" operator to see if a key is in an object, e.g.:
 # if (!(n in cache))
+
+def fib(n):
+    
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+    
+        
+def solution(n):
+    
+    cache = {}    
+    
+    if n not in cache:
+        cache[n] = fib(n)
+    
+    return cache[n]
+# NEED to fix above... timing out on n = large number
