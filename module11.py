@@ -26,3 +26,22 @@ def solution(a, b, c):
 
 
 # Above function generalize
+def solution(a, b, c):
+    nums = [a, b, c]
+    
+    head = tail = None
+    
+    for n in nums:
+        new_node = ListNode(n)
+        
+        if head == None:
+            head = tail = new_node
+        
+        else:
+            tail.next = new_node
+            tail = new_node
+    
+    return head
+
+
+# 
