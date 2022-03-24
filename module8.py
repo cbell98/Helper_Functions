@@ -129,3 +129,19 @@ def solution(a):
 # You have a string s. Split s into the minimum possible number of increasing substrings. A substring is 
 # considered to be increasing when the next symbol in the substring is also next in the English alphabet. 
 # This is case sensitive, i.e. 'b' is next for 'a' but 'C' is not next for 'b'. Return an array of these substrings.
+def solution(s):
+
+    results = []
+    current_str = ''
+    
+    for i in range(len(s) - 1):
+        current_str += s[i]
+        if ord(s[i]) != ord(s[i+1]) - 1:
+            results.append(current_str)
+            current_str = ''
+    
+    current_str += s[-1]
+    
+    results.append(current_str)
+    
+    return results
