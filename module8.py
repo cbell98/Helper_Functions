@@ -105,13 +105,21 @@ def solution(s, x):
 
 # Given a string s consisting of small English letters, find and return the first instance of a non-repeating 
 # character in it. If there is no such character, return '_'.
+def solution(s):
+
+    while len(s) > 0:
+        c = s[0]
+        if c in s[1:]:
+            s = s.replace(c, '')
+        else:
+            return c
+            
+    return "_"
 
 
 # You're given an array of integers a. Let's call (a[i - 1], a[i], a[i + 1]) a good tuple, if exactly 2 out of 
 # the 3 numbers in it are equal. For example, (2, 1, 2) is a good tuple, but (1, 1, 1) and (1, 2, 3) are not.
 # Your task is to return the number of good tuples in a. Note: The tuples may be overlapping.
-
-# In each window, compare three values
 def solution(a):
     
     good_tuples = 0
