@@ -63,7 +63,23 @@ def solution(a, window_size):
 # You are given an array of integers a. Your task is to calculate how many numbers in the array are equal to 
 # the arithmetic mean of their immediate neighbors. In other words, count the number of indices i such that 
 # a[i] = (a[i - 1] + a[i + 1]) / 2. Note: If a[i - 1] or a[i + 1] don't exist, they should be considered equal to 0.
-Need answer
+def solution(a):
+    
+    a = [0] + a + [0]
+    
+    count = 0
+    
+    for i in range(len(a)-2):
+        left = a[i]
+        middle = a[i+1]
+        right = a[i+2]
+        
+        avg = (left + right) / 2
+        
+        if middle == avg:
+            count += 1
+
+    return count
 
 
 # Avoid using built-in functions to solve this challenge. Implement them yourself, since this is what you would 
