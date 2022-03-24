@@ -101,6 +101,7 @@ def solution(s, x):
             return start           
         
     return -1
+# Above times out on long inputs... 
 
 
 # Given a string s consisting of small English letters, find and return the first instance of a non-repeating 
