@@ -118,12 +118,17 @@ def solution(a):
     
     window = 3
     
-    for start in range(0, len(a) - window +1):
+    for start in range(0, len(a) - (window - 1)):
+        
+        s = set()
         
         for i in range(0 + start, window + start):
-            
+            s.add(a[i])
+        
+        if len(s) == 2:
+            good_tuples += 1    
     
-            return good_tuples
+    return good_tuples
 
 
 # You have a string s. Split s into the minimum possible number of increasing substrings. A substring is 
