@@ -67,3 +67,24 @@ def solution(n, firstNumber):
 # you realize there's a chance the bridges on your route home are up, leaving you stranded! Unfortunately, you don't have your 
 # watch on you and don't know what time it is. All you know thanks to the bike's timer is that n minutes have passed since 00:00.
 # Using the bike's timer, calculate the current time. Return an answer as the sum of digits that the digital timer in the format hh:mm would show.
+def solution(n):
+    hours = str(n // 60)
+    minutes = str(n % 60)
+
+    total_1 = 0
+    for i in range(len(hours)):
+        total_1 += int(hours[i])
+    
+    total_2 = 0
+    for j in range(len(minutes)):
+        total_2 += int(minutes[j])
+    
+    return total_1 + total_2
+
+
+# Some phone usage rate may be described as follows:
+# first minute of a call costs min1 cents,
+# each minute from the 2nd up to 10th (inclusive) costs min2_10 cents
+# each minute after 10th costs min11 cents.
+# You have s cents on your account before the call. What is the duration of the longest call (in minutes rounded down 
+# to the nearest integer) you can have?
