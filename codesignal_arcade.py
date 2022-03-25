@@ -40,3 +40,16 @@ def solution(n):
 
 
 # You are given a two-digit integer n. Return the sum of its digits.
+def solution(n):
+    
+    n = str(n)
+    total = 0
+    
+    for digit in n:
+        digit = int(digit)
+        total += digit
+    
+    return total
+
+
+# 
