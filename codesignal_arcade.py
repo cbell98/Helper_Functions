@@ -173,3 +173,35 @@ def solution(a, b, c):
 # the winner unless their opponent had already won 5 games, in which case the set continues until one of the players has won 7 games.
 # Given two integers score1 and score2, your task is to determine if it is possible for a tennis set to be finished with a final 
 # score of score1 : score2.
+def solution(score1, score2):
+    if (score1 != 6 and score1 != 7) and (score2 != 6 and score2 != 7):
+        return False
+    
+    elif score1 == 6 and score2 < 5:
+        return True
+    
+    elif score1 == 7 and score2 == 5:
+        return True
+    
+    elif score1 == 7 and score2 == 6:
+        return True
+    
+    elif score2 == 6 and score1 < 5:
+        return True
+    
+    elif score2 == 7 and score1 == 5:
+        return True
+    
+    elif score2 == 7 and score1 == 6:
+        return True
+    
+    else:
+        return False
+
+    
+# Once Mary heard a famous song, and a line from it stuck in her head. That line was "Will you still love me when I'm no longer young and beautiful?". 
+# Mary believes that a person is loved if and only if he/she is both young and beautiful, but this is quite a depressing thought, so she wants to 
+# put her belief to the test. Knowing whether a person is young, beautiful and loved, find out if they contradict Mary's belief.
+# A person contradicts Mary's belief if one of the following statements is true:
+# they are young and beautiful but not loved;
+# they are loved but not young or not beautiful.
