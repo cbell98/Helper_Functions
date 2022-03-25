@@ -233,3 +233,16 @@ def solution(young, beautiful, loved):
 # how many times your pass has been extended so far. However, you do remember the number of days you were able to ride the Metro during 
 # this most recent month. Figure out the number of days by which your pass will now be extended, and return all the options as an array 
 # sorted in increasing order.
+def solution(lastNumberOfDays):
+    if lastNumberOfDays == 31:
+        return [28, 30, 31]
+    if lastNumberOfDays == 30:
+        return [31]
+    if lastNumberOfDays == 28:
+        return [31]
+
+
+# Given an integer n, find the minimal k such that: 
+# k = m! (where m! = 1 * 2 * ... * m) for some integer m;
+# k >= n.
+# In other words, find the smallest factorial which is not less than n.
