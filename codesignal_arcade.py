@@ -28,3 +28,15 @@ def solution(n, m):
 
 
 # Given an integer n, return the largest number that contains exactly n digits.
+def solution(n):
+    string = ""
+    
+    for i in range(n):
+        string += '9'
+    
+    result = int(string)
+    
+    return result
+
+
+# You are given a two-digit integer n. Return the sum of its digits.
