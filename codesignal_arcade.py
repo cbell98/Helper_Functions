@@ -88,3 +88,27 @@ def solution(n):
 # each minute after 10th costs min11 cents.
 # You have s cents on your account before the call. What is the duration of the longest call (in minutes rounded down 
 # to the nearest integer) you can have?
+def solution(min1, min2_10, min11, s):
+    minutes = 0
+    
+    if s < min1:
+        return 0
+    else:
+        minutes += 1
+        s = s - min1
+    
+    for i in range(9):
+        if s > min2_10:
+            minutes += 1
+            s = s - min2_10
+        else:
+            return minutes
+    
+    while s >= min11:
+        minutes += 1
+        s = s - min11
+    
+    return minutes
+
+
+# 
