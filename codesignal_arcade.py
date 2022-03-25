@@ -122,3 +122,18 @@ def solution(experience, threshold, reward):
 # What is the total maximum value of the items you can take with you, assuming that your max weight capacity is maxW and you can't come back for 
 # the items later? Note that there are only two items and you can't bring more than one item of each type, i.e. you can't take two first items or
 # two second items.
+def solution(value1, weight1, value2, weight2, maxW):
+    if (weight1 + weight2) <= maxW:
+        return (value1 + value2)
+    elif weight1 <= maxW and value1 >= value2:
+        return value1
+    elif weight2 <= maxW and value2 > value1:
+        return value2
+    elif weight1 <= maxW:
+        return value1
+    else:
+        return 0
+
+
+# You're given three integers, a, b and c. It is guaranteed that two of these integers are equal to each other. 
+# What is the value of the third integer?
