@@ -246,3 +246,18 @@ def solution(lastNumberOfDays):
 # k = m! (where m! = 1 * 2 * ... * m) for some integer m;
 # k >= n.
 # In other words, find the smallest factorial which is not less than n.
+def solution(n):
+    if n <= 1:
+        return 1
+    else:
+        if n <= 120 and n > 24:
+            return 120
+        if n <= 24 and n > 6:
+            return 24
+        if n <= 6 and n > 2:
+            return 6
+        if n == 2:
+            return 2
+        
+        
+# Given integers n, l and r, find the number of ways to represent n as a sum of two integers A and B such that l ≤ A ≤ B ≤ r.
