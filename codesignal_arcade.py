@@ -263,6 +263,20 @@ def solution(n):
 # Given integers n, l and r, find the number of ways to represent n as a sum of two integers A and B such that l ≤ A ≤ B ≤ r.
 
 
+# You are standing at a magical well. It has two positive integers written on it: a and b. Each time you cast a magic marble into the well, 
+# it gives you a * b dollars and then both a and b increase by 1. You have n magic marbles. How much money will you make?
+def solution(a, b, n):
+    dollars = 0
+    
+    while n > 0:
+        dollars += (a*b)
+        a += 1
+        b += 1
+        n -= 1
+    
+    return dollars
+
+
 # To prepare his students for an upcoming game, the sports coach decides to try some new training drills. To begin with, he lines them 
 # up and starts with the following warm-up exercise: when the coach says 'L', he instructs the students to turn to the left. Alternatively, 
 # when he says 'R', they should turn to the right. Finally, when the coach says 'A', the students should turn around. Unfortunately some 
