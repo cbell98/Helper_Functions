@@ -325,4 +325,21 @@ def solution(k):
     return red - yellow
 
 
+# Define an integer's roundness as the number of trailing zeroes in it. Given an integer n, check if it's possible to increase n's 
+# roundness by swapping some pair of its digits.
+def solution(n):
+    
+    n = str(n)
+    
+    for i in range(len(n)-1, -1, -1):
+        if n[i] != "0":
+            break
+    
+    for j in range(i, -1, -1):
+        if n[j] == "0":
+            return True
+    
+    return False
+
+
 # 
