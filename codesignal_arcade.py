@@ -303,3 +303,26 @@ def solution(commands):
 # A little child is studying arithmetic. They have just learned how to add two integers, written one below another, column by column. 
 # But the child always forgets about the important part - carrying. Given two integers, your task is to find the result that the child will get.
 # Note: The child had learned from this site, so feel free to check it out too if you are not familiar with column addition.
+Need answer
+
+
+# You have k apple boxes full of apples. Each square box of size m contains m × m apples. You just noticed two interesting properties about the boxes:
+# The smallest box is size 1, the next one is size 2,..., all the way up to size k. Boxes that have an odd size contain only yellow apples. 
+# Boxes that have an even size contain only red apples. Your task is to calculate the difference between the number of red apples and the 
+# number of yellow apples.
+def solution(k):
+    
+    red = 0
+    yellow = 0
+    
+    for i in range(1, k+1):
+        
+        if i % 2 == 0:
+            red += (i**2)
+        else:
+            yellow += (i**2)
+    
+    return red - yellow
+
+
+# 
