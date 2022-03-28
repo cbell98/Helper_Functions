@@ -342,4 +342,22 @@ def solution(n):
     return False
 
 
+# When a candle finishes burning it leaves a leftover. makeNew leftovers can be combined to make a new candle, which, when burning down, 
+# will in turn leave another leftover. You have solutionNumber solution in your possession. What's the total number of solution you can burn, 
+# assuming that you create new solution as soon as you have enough leftovers?
+def solution(candlesNumber, makeNew):
+    
+    total = 0
+    leftovers = 0
+    
+    while candlesNumber > 0:
+        total += candlesNumber
+        leftovers += candlesNumber
+        
+        candlesNumber = leftovers // makeNew
+        leftovers = leftovers % makeNew
+    
+    return total
+
+
 # 
