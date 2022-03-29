@@ -410,3 +410,11 @@ def solution(arr):
 
 
 # Given two arrays of integers a and b, obtain the array formed by the elements of a followed by the elements of b.
+def solution(a, b):
+    for i in range(len(b)):
+        a.append(b[i])
+    
+    return a
+
+
+# Remove a part of a given array between given 0-based indexes l and r (inclusive).
