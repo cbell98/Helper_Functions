@@ -384,4 +384,29 @@ def solution(size):
     return row
 
 
-# 
+# Given an array of integers, replace all the occurrences of elemToReplace with substitutionElem.
+def solution(inputArray, elemToReplace, substitutionElem):
+    
+    for i in range(len(inputArray)):
+        if inputArray[i] == elemToReplace:
+            inputArray[i] = substitutionElem
+            
+    return inputArray
+
+
+# Reversing an array can be a tough task, especially for a novice programmer. Mary just started coding, 
+# so she would like to start with something basic at first. Instead of reversing the array entirely, she 
+# wants to swap just its first and last elements. Given an array arr, swap its first and last elements and 
+# return the resulting array.
+def solution(arr):
+    if arr == []:
+        return []
+    else:
+        holder = arr[0]
+        arr[0] = arr[-1]
+        arr[-1] = holder
+    
+    return arr
+
+
+# Given two arrays of integers a and b, obtain the array formed by the elements of a followed by the elements of b.
