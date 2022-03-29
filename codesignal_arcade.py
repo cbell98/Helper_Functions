@@ -473,3 +473,37 @@ def solution(arr):
 # elements whose index numbers when counting from the beginning and from the end of the array differ by one.
 # Given array arr, your task is to find its middle, and, if it consists of two elements, replace those elements with the value 
 # of middle. Return the resulting array as the answer.
+def solution(arr):
+    if arr == []:
+        return []
+
+    if len(arr) == 1:
+        middle = arr[0]
+
+    if len(arr) == 2:
+        middle = arr[0] + arr[1]
+
+    if len(arr) % 2 == 1:
+        index = int((len(arr) - 1) / 2)
+        middle = arr[index]
+
+    else:
+        index = int(len(arr) // 2)
+        index2 = int((len(arr) // 2) - 1)
+        middle = arr[index] + arr[index2]
+    
+    if len(arr) % 2 == 1:
+        return arr
+    else:
+        arr.pop(index)
+        arr.pop(index2)
+        new_index = int(len(arr) / 2)
+        arr.insert(new_index, middle)
+        
+        return arr
+
+
+# Ratiorg got statues of different sizes as a present from CodeMaster for his birthday, each statue having an non-negative 
+# integer size. Since he likes to make things perfect, he wants to arrange them from smallest to largest so that each statue 
+# will be bigger than the previous one exactly by 1. He may need some additional statues to be able to accomplish that. Help 
+# him figure out the minimum number of additional statues needed.
