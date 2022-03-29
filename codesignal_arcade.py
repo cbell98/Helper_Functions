@@ -371,3 +371,17 @@ def solution(candlesNumber, makeNew):
 # right corner. Now let's paint the grid in two colors according to the following rules: 
 # A cell is painted black if it has at least one point in common with the diagonal;
 # Otherwise, a cell is painted white. Count the number of cells painted black.
+Solution
+
+
+# Given an integer size, return array of length size filled with 1s.
+def solution(size):
+    row = []
+    
+    for i in range(size):
+        row.append(1)
+    
+    return row
+
+
+# 
