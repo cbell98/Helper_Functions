@@ -418,3 +418,22 @@ def solution(a, b):
 
 
 # Remove a part of a given array between given 0-based indexes l and r (inclusive).
+def solution(inputArray, l, r):
+    new_array = []
+    
+    for i in range(len(inputArray)):
+        if i >= l and i <= r:
+            continue
+        else:
+            new_array.append(inputArray[i])
+    
+    return new_array
+
+
+# We define the middle of the array arr as follows:
+# if arr contains an odd number of elements, its middle is the element whose index number is the same when counting from 
+# the beginning of the array and from its end;
+# if arr contains an even number of elements, its middle is the sum of the two elements whose index numbers when counting from 
+# the beginning and from the end of the array differ by one.
+# An array is called smooth if its first and its last elements are equal to one another and to the middle. Given an array arr, 
+# determine if it is smooth or not.
