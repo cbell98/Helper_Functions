@@ -437,3 +437,39 @@ def solution(inputArray, l, r):
 # the beginning and from the end of the array differ by one.
 # An array is called smooth if its first and its last elements are equal to one another and to the middle. Given an array arr, 
 # determine if it is smooth or not.
+def solution(arr):
+    
+    if arr[0] == arr[-1]:
+            # if arr == []:
+            #     return []
+    
+            if len(arr) == 1:
+                middle = arr[0]
+        
+            if len(arr) == 2:
+                middle = arr[0] + arr[1]
+    
+            if len(arr) % 2 == 1:
+                index = int((len(arr) - 1) / 2)
+                middle = arr[index]
+    
+            else:
+                index = int(len(arr) // 2)
+                index2 = int((len(arr) // 2) - 1)
+                middle = arr[index] + arr[index2]
+            
+            if arr[0] == middle:
+                return True
+            else:
+                return False
+ 
+    else:
+        return False
+
+
+# We define the middle of the array arr as follows:
+# if arr contains an odd number of elements, its middle is the element whose index number is the same when counting from 
+# the beginning of the array and from its end; if arr contains an even number of elements, its middle is the sum of the two 
+# elements whose index numbers when counting from the beginning and from the end of the array differ by one.
+# Given array arr, your task is to find its middle, and, if it consists of two elements, replace those elements with the value 
+# of middle. Return the resulting array as the answer.
