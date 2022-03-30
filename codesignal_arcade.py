@@ -513,4 +513,8 @@ def solution(statues):
     return (the_range - len(statues))
 
 
-# 
+# Determine if the given number is a power of some non-negative integer.
+
+
+# Find the number of ways to express n as sum of some (at least two) consecutive positive integers.
+
