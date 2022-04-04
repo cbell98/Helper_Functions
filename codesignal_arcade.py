@@ -586,3 +586,20 @@ def solution(a0):
 # of the book is that you can number given the current page and numberOfDigits left. A page is considered numbered if it has the full 
 # number printed on it (e.g. if we are working with page 102 but have ink only for two digits then this page will not be considered numbered).
 # It's guaranteed that you can number the current page, and that you can't number the last one in the book.
+def solution(current, numberOfDigits):
+    
+    while numberOfDigits > 0:
+        new_current = str(current)
+        if numberOfDigits < len(new_current):
+            return current - 1
+        else:
+            numberOfDigits -= len(new_current)
+            print(numberOfDigits)
+            current += 1
+    
+    return current - 1
+
+
+# Let's say that number a feels comfortable with number b if a ≠ b and b lies in the segment [a - s(a), a + s(a)], where s(x) is the 
+# sum of x's digits. How many pairs (a, b) are there, such that a < b, both a and b lie on the segment [l, r], and each number feels 
+# comfortable with the other (so a feels comfortable with b and b feels comfortable with a)?
