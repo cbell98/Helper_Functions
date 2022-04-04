@@ -552,3 +552,33 @@ def solution(statues):
 # Given a sequence of integers as an array, determine whether it is possible to obtain a strictly increasing 
 # sequence by removing no more than one element from the array. Note: sequence a0, a1, ..., an is considered 
 # to be a strictly increasing if a0 < a1 < ... < an. Sequence containing only one element is also considered to be strictly increasing.
+
+
+# Consider a sequence of numbers a0, a1, ..., an, in which an element is equal to the sum of squared digits of the previous element. 
+# The sequence ends once an element that has already been in the sequence appears again. Given the first element a0, find the 
+# length of the sequence.
+def solution(a0):
+    
+    dict = {}
+    
+    while a0 not in dict:
+        dict[a0] = 1
+
+        a0 = str(a0)
+
+        new_a0 = []
+        for i in range(len(a0)):
+            new = int(a0[i])
+            new_a0.append(new)
+
+        total = 0
+        
+        for j in range(len(new_a0)):
+            total += (new_a0[j] ** 2)
+
+        a0 = total
+
+    return (len(dict) + 1)
+
+
+# 
