@@ -261,6 +261,25 @@ def solution(n):
         
         
 # Given integers n, l and r, find the number of ways to represent n as a sum of two integers A and B such that l ≤ A ≤ B ≤ r.
+# Example
+# For n = 6, l = 2, and r = 4, the output should be solution(n, l, r) = 2.
+# There are just two ways to write 6 as A + B, where 2 ≤ A ≤ B ≤ 4: 6 = 2 + 4 and 6 = 3 + 3.
+def solution(n, l, r):
+
+    count = -1
+    total = 0
+    # count sums of two ints between L and R that equal N 
+
+    for i in range(l, r+1):
+        print(i)
+        count += 1
+        
+        for j in range(l + count, r+1):
+            print(j)
+            if (i + j) == n:
+                total += 1
+    
+    return total
 
 
 # You are standing at a magical well. It has two positive integers written on it: a and b. Each time you cast a magic marble into the well, 
