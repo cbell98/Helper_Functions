@@ -603,3 +603,51 @@ def solution(current, numberOfDigits):
 # Let's say that number a feels comfortable with number b if a ≠ b and b lies in the segment [a - s(a), a + s(a)], where s(x) is the 
 # sum of x's digits. How many pairs (a, b) are there, such that a < b, both a and b lie on the segment [l, r], and each number feels 
 # comfortable with the other (so a feels comfortable with b and b feels comfortable with a)?
+
+
+# We define the weakness of number x as the number of positive integers smaller than x that have more divisors than x.
+# It follows that the weaker the number, the greater overall weakness it has. For the given integer n, you need to answer two questions:
+# what is the weakness of the weakest numbers in the range [1, n]? how many numbers in the range [1, n] have this weakness?
+# Return the answer as an array of two elements, where the first element is the answer to the first question, and the second element 
+# is the answer to the second question.
+def divisor_num(x):
+    divisors = 0
+    
+    for i in range(x, 0, -1):
+        if x % i == 0:
+            divisors += 1
+            
+    return divisors
+
+def solution(n):
+    array = []
+        
+    for i in range(n, 0, -1):
+        array.append(divisor_num(i))
+    
+    array = array[::-1]
+    
+    weak_array = []
+    array = array[::-1]
+    print(array)
+    
+    for j in range(len(array)):
+        count = 0
+        
+        for k in range(j, len(array)):
+            if array[k] > array[j]:
+                count += 1
+        
+        weak_array.append(count)
+    
+    weak_array = sorted(weak_array, reverse=True)
+    
+    result = []
+    
+    result.append(weak_array[0])
+    result.append(weak_array.count(weak_array[0]))
+    
+    return result
+
+
+# 
