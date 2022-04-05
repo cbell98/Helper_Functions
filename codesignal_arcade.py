@@ -681,4 +681,22 @@ def solution(noun):
     return noun.capitalize()
 
 
-#
+# Determine whether the given string can be obtained by one concatenation of some string to itself.
+def solution(inputString):
+    if len(inputString) % 2 != 0:
+        return False
+    else:
+        length = len(inputString) / 2
+        length = int(length)
+        
+        string1 = inputString[0:length]
+        string2 = inputString[length:]
+    
+    print(string1, string2)
+    if string1 == string2:
+        return True
+    else:
+        return False
+
+  
+# 
