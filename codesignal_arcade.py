@@ -710,4 +710,33 @@ def solution(inputString):
     return inputString == inputString[::-1]
 
 
+# An email address such as "John.Smith@example.com" is made up of a local part ("John.Smith"), an "@" symbol, then a 
+# domain part ("example.com"). The domain name part of an email address may only consist of letters, digits, hyphens and dots. 
+# The local part, however, also allows a lot of different special characters. Here you can look at several examples of correct
+# and incorrect email addresses. Given a valid email address, find its domain part.
+def solution(address):
+    new_string = ""
+    
+    for i in range(len(address) - 1, -1, -1):
+        if address[i] == "@":
+            return new_string[::-1]
+        else:
+            new_string += address[i]
+           
+  
+# You are implementing your own HTML editor. To make it more comfortable for developers you would like to add an auto-completion 
+# feature to it. Given the starting HTML tag, find the appropriate end tag which your editor should propose. If you are not 
+# familiar with HTML, consult with this note.
+def solution(startTag):
+    end_tag = "</"
+    
+    for i in range(1, len(startTag)):
+        if startTag[i] == " ":
+            return end_tag + ">"
+        else:
+            end_tag += startTag[i]
+    
+    return end_tag
+
+
 # 
