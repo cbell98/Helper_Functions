@@ -765,4 +765,41 @@ def solution(inputString):
 
 # Given two strings a and b, both consisting only of lowercase English letters, your task is to calculate how many strings equal 
 # to a can be constructed using only letters from the string b? Each letter can be used only once and in one string only.
+def solution(a, b):
+    
+    if len(a) > len(b):
+        return 0
 
+    dict_b = {}
+
+    for i in range(len(b)):
+        if b[i] not in dict_b:
+            dict_b[b[i]] = 0
+
+        dict_b[b[i]] += 1
+    
+    # print("Dictionary B:", dict_b)
+    
+    dict_a = {}
+
+    for j in range(len(a)):
+        if a[j] not in dict_a:
+            dict_a[a[j]] = 0
+
+        dict_a[a[j]] += 1
+    
+    # print("Dictionary A:", dict_a)
+    
+    counts = []
+    
+    for key in dict_a.keys():
+        if key in dict_b.keys():
+            # print(key, dict_a[key], dict_b[key])
+            counts.append(dict_b[key] // dict_a[key])
+        else:
+            return 0
+    
+    return min(counts)
+
+
+# 
