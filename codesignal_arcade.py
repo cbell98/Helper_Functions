@@ -763,4 +763,6 @@ def solution(inputString):
     return True
 
 
-# 
+# Given two strings a and b, both consisting only of lowercase English letters, your task is to calculate how many strings equal 
+# to a can be constructed using only letters from the string b? Each letter can be used only once and in one string only.
+
