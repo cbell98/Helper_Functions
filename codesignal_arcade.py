@@ -806,4 +806,14 @@ def solution(a, b):
 # will be a simple ciphertext alphabet where a and b are rearranged. A substitution cipher is a method of encoding where each letter 
 # of the plaintext alphabet is replaced with the corresponding (i.e. having the same index) letter of some ciphertext alphabet.
 # Given two strings, check whether it is possible to obtain them from each other using some (possibly, different) substitution ciphers.
+Solution needed
 
+
+# Given two lists lst1 and lst2, your task is to return a list formed by the elements of lst1 followed by the elements of lst2.
+def solution(lst1, lst2):
+    res = lst1
+    res.extend(lst2)
+    return res
+
+
+# 
