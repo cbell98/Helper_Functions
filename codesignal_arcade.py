@@ -850,4 +850,4 @@ class Solution:
         
         return dfs_left(root.left, [])==dfs_right(root.right, [])
 
-    
+   
