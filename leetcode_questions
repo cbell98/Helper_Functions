@@ -27,3 +27,27 @@ def closestPair(a1: list, a2: list, target: int) -> list:
 closestPair(a1, a2, target)
 
 
+
+def factorial(n):
+
+    if n >= 1:
+        return n * factorial(n-1)
+    else:
+        return 1
+
+factorial(8)
+
+
+
+def fib(n):
+
+    if n >= 3:
+        return fib(n-1) + fib(n-2)
+        
+    else:
+        return 1
+
+fib(3)
+
+
+
