@@ -51,3 +51,23 @@ fib(3)
 
 
 
+You are given the root of a binary search tree (BST) and an integer val. Find the node in the BST that the node's value equals val 
+and return the subtree rooted with that node. If such a node does not exist, return null.
+class Solution:
+    def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+        
+        stack = [root]
+        
+        while stack != []:
+            root = stack.pop()
+            if root.val == val:
+                return root
+            
+            if root.right is not None:
+                stack.append(root.right)
+            if root.left is not None:
+                stack.append(root.left)
+        
+        return None
+   
+   
