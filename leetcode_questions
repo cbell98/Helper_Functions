@@ -155,3 +155,21 @@ Your solution must use only constant extra space.
                 right -= 1
             else:
                 return (left + 1), (right + 1)
+                
+ 
+ 19. Remove Nth Node From End of List
+ Given the head of a linked list, remove the nth node from the end of the list and return its head.
+     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        
+        dummy = fast = slow = ListNode(0, next=head)
+        
+        for _ in range(n):
+            fast = fast.next
+            
+        while fast.next:
+            fast = fast.next
+            slow = slow.next
+        
+        slow.next = slow.next.next
+        
+        return dummy.next
