@@ -173,3 +173,38 @@ Your solution must use only constant extra space.
         slow.next = slow.next.next
         
         return dummy.next
+        
+      
+ 
+34. Find First and Last Position of Element in Sorted Array
+Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
+If target is not found in the array, return [-1, -1].
+You must write an algorithm with O(log n) runtime complexity.
+
+def searchRange(self, nums: List[int], target: int) -> List[int]:
+        
+        final = []
+        left = 0
+        right = len(nums) - 1
+        
+        while left <= right:
+            mid = (left + right) // 2
+            if nums[mid] == target:
+                j = mid - 1
+                while j >= 0 and nums[j] == target:
+                    j -= 1
+                final.append(j+1)
+                k = mid + 1
+                while k <= (len(nums) - 1) and nums[k] == target:
+                    k += 1
+                final.append(k-1)
+                return final
+            elif target < nums[mid]:
+                right = mid - 1
+            else:
+                left = mid + 1
+        
+        if final == []:
+            return [-1,-1]
+
+ 
