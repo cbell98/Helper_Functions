@@ -115,3 +115,28 @@ Need answer
 
 # Given a list and a value, append the value to the end of the list. You have to wrap the value into a ListNode() object.
 # Return a reference to the head of the list.
+
+
+# Given a list of numbers, create an algorithm that arranges them in order to form the largest possible integer. For example, 
+# given [10, 7, 76, 415], you should return 77641510.
+def largest_number(nums):
+    # Convert numbers to strings
+    nums = [str(num) for num in nums]
+    
+    # Define comparison function
+    def compare(a, b):
+        if a + b > b + a:
+            return -1
+        elif a + b < b + a:
+            return 1
+        else:
+            return 0
+    
+    # Sort the list of strings using the custom comparison function
+    nums.sort(key=compare)
+    
+    # Concatenate the sorted list of strings into a single string
+    result = ''.join(nums)
+    
+    # Return the resulting string as the output
+    return result
