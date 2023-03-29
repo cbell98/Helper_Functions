@@ -140,3 +140,46 @@ def largest_number(nums):
     
     # Return the resulting string as the output
     return result
+
+
+Snakes and Ladders is a game played on a 10 x 10 board, the goal of which is get from square 1 to square 100. On each turn players will roll a six-sided die and move forward a number of spaces equal to the result. 
+If they land on a square that represents a snake or ladder, they will be transported ahead or behind, respectively, to a new square.
+Find the smallest number of turns it takes to play snakes and ladders.
+For convenience, here are the squares representing snakes and ladders, and their outcomes:
+snakes = {16: 6, 48: 26, 49: 11, 56: 53, 62: 19, 64: 60, 87: 24, 93: 73, 95: 75, 98: 78}
+ladders = {1: 38, 4: 14, 9: 31, 21: 42, 28: 84, 36: 44, 51: 67, 71: 91, 80: 100}
+
+You can solve this problem using breadth-first search (BFS), which is a common algorithm for finding the shortest path in a graph. 
+In this case, the graph consists of the squares on the board, and the edges represent the possible moves from one square to another.
+
+from collections import deque
+
+def snakes_and_ladders():
+    # Initialize the board and the start and end squares
+    board = list(range(101))
+    snakes = {16: 6, 48: 26, 49: 11, 56: 53, 62: 19, 64: 60, 87: 24, 93: 73, 95: 75, 98: 78}
+    ladders = {1: 38, 4: 14, 9: 31, 21: 42, 28: 84, 36: 44, 51: 67, 71: 91, 80: 100}
+    start, end = 1, 100
+    
+    # Initialize the queue with the starting square
+    queue = deque([(start, 0)])
+    
+    # Initialize a set to keep track of visited squares
+    visited = set([start])
+    
+    # Perform BFS until the end square is reached
+    while queue:
+        square, turns = queue.popleft()
+        if square == end:
+            return turns
+        for next_square in range(square + 1, min(square + 7, 101)):
+            if next_square in snakes:
+                next_square = snakes[next_square]
+            elif next_square in ladders:
+                next_square = ladders[next_square]
+            if next_square not in visited:
+                visited.add(next_square)
+                queue.append((next_square, turns + 1))
+    
+    # If the end square is not reachable, return -1
+    return -1
