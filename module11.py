@@ -183,3 +183,61 @@ def snakes_and_ladders():
     
     # If the end square is not reachable, return -1
     return -1
+
+
+Blackjack is a two player card game whose rules are as follows:
+The player and then the dealer are each given two cards.
+The player can then "hit", or ask for arbitrarily many additional cards, so long as their total does not exceed 21.
+The dealer must then hit if their total is 16 or lower, otherwise pass.
+Finally, the two compare totals, and the one with the greatest sum not exceeding 21 is the winner.
+For this problem, cards values are counted as follows: each card between 2 and 10 counts as their face value, 
+face cards count as 10, and aces count as 1.
+Given perfect knowledge of the sequence of cards in the deck, implement a blackjack solver that maximizes the player's 
+score (that is, wins minus losses).
+
+import random
+
+def simulate_game():
+    # Generate a deck of cards
+    deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 1] * 4
+    random.shuffle(deck)
+
+    # Deal initial hands
+    player_hand = [deck.pop(), deck.pop()]
+    dealer_hand = [deck.pop(), deck.pop()]
+
+    # Player's turn
+    while sum(player_hand) <= 21:
+        # Determine whether to hit or pass
+        if sum(player_hand) < 17:
+            player_hand.append(deck.pop())
+        else:
+            break
+
+    # Dealer's turn
+    while sum(dealer_hand) <= 16:
+        dealer_hand.append(deck.pop())
+
+    # Determine winner
+    player_total = sum(player_hand)
+    dealer_total = sum(dealer_hand)
+    if player_total > 21:
+        return -1
+    elif dealer_total > 21 or player_total > dealer_total:
+        return 1
+    elif player_total == dealer_total:
+        return 0
+    else:
+        return -1
+
+def simulate_games(num_games):
+    total_score = 0
+    for i in range(num_games):
+        result = simulate_game()
+        total_score += result
+    return total_score
+
+# Example usage
+num_games = 10000
+score = simulate_games(num_games)
+print(f"Score after {num_games} games: {score}")
