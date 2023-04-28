@@ -241,3 +241,38 @@ def simulate_games(num_games):
 num_games = 10000
 score = simulate_games(num_games)
 print(f"Score after {num_games} games: {score}")
+
+
+This problem was asked by Morgan Stanley.
+In Ancient Greece, it was common to write text with the first line going left to right, the second line going right to left, 
+and continuing to go back and forth. This style was called "boustrophedon".
+Given a binary tree, write an algorithm to print the nodes in boustrophedon order.
+
+def boustrophedon_order(root):
+    if root is None:
+        return []
+
+    queue = [root]
+    left_to_right = True
+    result = []
+
+    while queue:
+        level_nodes = []
+        level_size = len(queue)
+
+        for i in range(level_size):
+            node = queue.pop(0)
+            level_nodes.append(node)
+
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+
+        if not left_to_right:
+            level_nodes.reverse()
+
+        result.extend([node.val for node in level_nodes])
+        left_to_right = not left_to_right
+
+    return result
