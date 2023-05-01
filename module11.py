@@ -276,3 +276,83 @@ def boustrophedon_order(root):
         left_to_right = not left_to_right
 
     return result
+
+
+Huffman coding is a method of encoding characters based on their frequency. Each letter is assigned a variable-length binary string, 
+such as 0101 or 111110, where shorter lengths correspond to more common letters. To accomplish this, a binary tree is built such that 
+the path from the root to any leaf uniquely maps to a character. When traversing the path, descending to a left child corresponds to 
+a 0 in the prefix, while descending right corresponds to 1.
+Here is an example tree (note that only the leaf nodes have letters):
+
+        *
+      /   \
+    *       *
+   / \     / \
+  *   a   t   *
+ /             \
+c               s
+With this encoding, cats would be represented as 0000110111.
+
+Given a dictionary of character frequencies, build a Huffman tree, and use it to determine a mapping 
+between characters and their encoded binary strings.
+
+import heapq
+from collections import defaultdict
+
+class Node:
+    def __init__(self, freq, char=None, left=None, right=None):
+        self.freq = freq
+        self.char = char
+        self.left = left
+        self.right = right
+        
+    def __lt__(self, other):
+        return self.freq < other.freq
+
+def build_huffman_tree(freq_dict):
+    heap = [Node(freq, char) for char, freq in freq_dict.items()]
+    heapq.heapify(heap)
+    
+    while len(heap) > 1:
+        left = heapq.heappop(heap)
+        right = heapq.heappop(heap)
+        parent = Node(left.freq + right.freq, left=None, right=None)
+        parent.left, parent.right = left, right
+        heapq.heappush(heap, parent)
+        
+    return heap[0]
+
+def traverse_tree(node, code="", code_dict={}):
+    if node.char:
+        code_dict[node.char] = code
+    else:
+        traverse_tree(node.left, code + "0", code_dict)
+        traverse_tree(node.right, code + "1", code_dict)
+        
+    return code_dict
+
+def huffman_encoding(data):
+    freq_dict = defaultdict(int)
+    for char in data:
+        freq_dict[char] += 1
+    
+    huffman_tree = build_huffman_tree(freq_dict)
+    code_dict = traverse_tree(huffman_tree)
+    
+    encoded_data = "".join(code_dict[char] for char in data)
+    return encoded_data, huffman_tree
+
+def huffman_decoding(encoded_data, huffman_tree):
+    decoded_data = ""
+    node = huffman_tree
+    for bit in encoded_data:
+        if bit == "0":
+            node = node.left
+        else:
+            node = node.right
+            
+        if node.char:
+            decoded_data += node.char
+            node = huffman_tree
+            
+    return decoded_data
